@@ -33,8 +33,21 @@ function App() {
     if (date) {
       // a function that will check for palindrome
       // console.log("yayyyyayay", date)
-      setOutputDiv(<p>yoyoyo.</p>);
-      checkPalindrome();
+      setOutputDiv(
+        <img
+          style={{
+            marginTop: "1rem",
+            height: "3rem",
+            width: "3rem",
+            borderRadius: "99px",
+          }}
+          src="https://media0.giphy.com/media/RgzryV9nRCMHPVVXPV/giphy.gif?cid=ecf05e471uj8s7y111nz10pdu4ol6yver40x5atyh76z0gjx&rid=giphy.gif&ct=g"
+          alt=""
+        ></img>
+      );
+      setTimeout(() => {
+        checkPalindrome();
+      }, 4000);
     } else {
       setOutputDiv(<p>Please fill date field.</p>);
     }
@@ -131,7 +144,11 @@ function App() {
             </ul>
           </div>
           <div className="RightCorner">
-            <a target="_blank" href="/">
+            <a
+              target="_blank"
+              href="https://github.com/VedanthB/Palindrome-Birthday-Checker"
+              rel="noreferrer"
+            >
               Github Repo
             </a>
           </div>
@@ -190,17 +207,20 @@ function App() {
             </a>
           </li>
           <li>
-            <a target="_blank" href="/" rel="noreferrer">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="/" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://github.com/VedanthB"
+              rel="noreferrer"
+            >
               Github
             </a>
           </li>
           <li>
-            <a target="_blank" href="/" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://vedanthbora.netlify.app"
+              rel="noreferrer"
+            >
               Portfolio
             </a>
           </li>
