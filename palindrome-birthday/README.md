@@ -29,3 +29,37 @@ step 1 :
 check all date formats function will
 
 - check for Palindrome function on stack overflow
+
+## for dark mode
+
+- create a variable to store dark and light themes
+- and the highlight theme as well (both in an array so we can access the value later on)
+- set states for theme and highlight theme , set initial theme and highlight theme values
+- now the toggle switch use if else in onChange event to change the themes with the state values
+
+```javascript
+<ul className="list">
+  <li>
+    <label className="switch">
+      <input
+        onChange={() => {
+          using flag to set the theme
+          setThemeFlag = setThemeFlag + 1;
+          if (setThemeFlag % 2 === 0) {
+            setTheme(darkTheme);
+            setHighLightTheme(highlightTheme[1]);
+          } else {
+            setTheme(lightTheme);
+            setHighLightTheme(highlightTheme[0]);
+          }
+        }}
+        type="checkbox"
+      />
+      <span className="slider round"></span>
+    </label>
+  </li>
+  <li>Click to change theme</li>
+</ul>
+```
+
+- then style the themes in header and footer and where-ever necessary

@@ -14,8 +14,19 @@ let date;
 
 let newoutput = "";
 
+//define var for themes
+const darkTheme = ["#000000", "white"];
+const lightTheme = ["#52057B", "white"];
+const highlightTheme = ["#000000", "#52057B"];
+
+//theme flag
+let setThemeFlag = 0;
+
 function App() {
   const [outputDiv, setOutputDiv] = useState("");
+  // state for the themes
+  const [theme, setTheme] = useState(darkTheme);
+  const [highLightTheme, setHighLightTheme] = useState(highlightTheme[1]);
 
   function inputDateHandler(e) {
     e.preventDefault();
@@ -51,7 +62,7 @@ function App() {
     // check all the combinations
     //yyyy-mm-dd format string
     const dateFormat1 = yyyy + mm + dd;
-
+    console.log(dateFormat1);
     //dd-mm-yyyy format string
     const dateFormat2 = dd + mm + yyyy;
 
@@ -91,18 +102,69 @@ function App() {
 
   return (
     <div className="App">
+      {/* header gets the theme back ground */}
+      {/* accessing the properties using index values */}
+      <header style={{ backgroundColor: `${theme[0]}`, color: `${theme[1]}` }}>
+        <div className="Nav">
+          <div className="leftCorner">
+            <ul className="list">
+              <li>
+                <label className="switch">
+                  <input
+                    onChange={() => {
+                      // using flag to set the theme
+                      setThemeFlag = setThemeFlag + 1;
+                      if (setThemeFlag % 2 === 0) {
+                        setTheme(darkTheme);
+                        setHighLightTheme(highlightTheme[1]);
+                      } else {
+                        setTheme(lightTheme);
+                        setHighLightTheme(highlightTheme[0]);
+                      }
+                    }}
+                    type="checkbox"
+                  />
+                  <span className="slider round"></span>
+                </label>
+              </li>
+              <li>Click to change theme</li>
+            </ul>
+          </div>
+          <div className="RightCorner">
+            <a target="_blank" href="/">
+              Github Repo
+            </a>
+          </div>
+        </div>
+        <section className="hero">
+          <div className="text-section">
+            <h1>
+              Check out if your{" "}
+              <span style={{ color: `${highLightTheme}` }}>Birth-date</span> is{" "}
+              <span style={{ color: `${highLightTheme}` }}>Palindrome</span>.
+            </h1>
+            <p>
+              A palindrome is a word/number which reads the same backward as
+              forward
+            </p>
+            <a className="linkPrimary" href="#mainSection">
+              click here
+            </a>
+          </div>
+        </section>
+      </header>
       <section id="mainSection">
         <h2>
-          Enter your birthdate and we will tell you if your birthdate is a
+          Enter your birth-date and we will tell you if your birth-date is a
           palindrome
         </h2>
         <p style={{ fontSize: "1rem" }}>
           This app checks your birth-date in 4 formats{" "}
-          <i>yyyy-mm-dd, dd-mm-yyyy, m-dd-yyyy</i>
+          <i>yyyy-mm-dd, dd-mm-yyyy, mm-dd-yyyy and m-dd-yyyy</i>
           <br /> e.g. if your birth-date is 01 Aug 1995, then app will check for
           19950801, 01081995,1081995
         </p>
-        <form onSubmit={inputDateHandler}>
+        <form className="form" onSubmit={inputDateHandler}>
           <input
             onChange={(e) => {
               date = e.target.value;
@@ -119,6 +181,32 @@ function App() {
         </form>
         <div>{outputDiv}</div>
       </section>
+
+      <footer style={{ backgroundColor: `${theme[0]}`, color: `${theme[1]}` }}>
+        <ul className="list">
+          <li>
+            <a target="_blank" href="/" rel="noreferrer">
+              Linked in
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="/" rel="noreferrer">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="/" rel="noreferrer">
+              Github
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="/" rel="noreferrer">
+              Portfolio
+            </a>
+          </li>
+        </ul>
+        <div className="footer-text">© | 2020 | VedanthB</div>
+      </footer>
     </div>
   );
 }
