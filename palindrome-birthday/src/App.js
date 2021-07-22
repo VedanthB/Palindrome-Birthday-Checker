@@ -20,11 +20,17 @@ function App() {
     if (date) {
       // a function that will check for palindrome
       // console.log("yayyyyayay", date)
+      setOutputDiv(<p>yoyoyo.</p>);
+      checkPalindrome()
       
     } else {
       setOutputDiv(<p>Please fill date field.</p>);
     }
-  } 
+  }
+  
+  function checkPalindrome() {
+    // before checking for palindrome we have to generate the date 
+  }
 
 
   return (
