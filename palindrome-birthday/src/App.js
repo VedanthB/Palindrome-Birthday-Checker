@@ -39,9 +39,10 @@ function App() {
     const inputDate = dateArray[2];
     let setFlag = checkAllFormatsOfDate(inputYear, inputMonth, inputDate); // function to check all date formats
     if (setFlag) {
-      newoutput = `Whoa!!! Your birthdate in format ${setFlag} is palindrome`;
+      // TODO: CHECK FOR NEAREST DAY (NEED HELP WITH THIS AS WELL)
+      newoutput = `Whoooohooo!!! Your birth-date in format ${setFlag} is palindrome`;
     } else {
-      newoutput = `Awww! Your birthdate is not palindrome.`;
+      newoutput = `Opps! Your birth-date is not palindrome.`;
     }
     setOutputDiv(<p>{newoutput}</p>);
   }
@@ -55,12 +56,13 @@ function App() {
     const dateFormat2 = dd + mm + yyyy;
 
     //mm-dd-yy format string
-    const dateFormat3 = mm + dd + yyyy.substring(2);
+    const dateFormat3 = mm + dd + yyyy.substring(2); // why this??????
 
     //m-dd-yyyy format string
     const dateFormat4 = Number(mm) + dd + yyyy;
 
     if (isPalindrome(dateFormat1)) {
+      // we do return here because stops when we get the value and quits
       return `${yyyy}-${mm}-${dd}`;
     } else if (isPalindrome(dateFormat2)) {
       return `${dd}-${mm}-${yyyy}`;
