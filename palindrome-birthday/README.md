@@ -1,6 +1,6 @@
 # Check if birth date is palindrome
 
-step 1 :
+>step 1 :
 
 - return a date input with a button
 - input gets a event listener
@@ -30,7 +30,7 @@ check all date formats function will
 
 - check for Palindrome function on stack overflow
 
-## for dark mode
+>## for dark mode
 
 - create a variable to store dark and light themes
 - and the highlight theme as well (both in an array so we can access the value later on)
