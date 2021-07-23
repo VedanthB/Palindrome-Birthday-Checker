@@ -191,7 +191,11 @@ function App() {
       <footer style={{ backgroundColor: `${theme[0]}`, color: `${theme[1]}` }}>
         <ul className="list">
           <li>
-            <a target="_blank" href="/" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/vedanth-bora-a7553818b/"
+              rel="noreferrer"
+            >
               Linked in
             </a>
           </li>
