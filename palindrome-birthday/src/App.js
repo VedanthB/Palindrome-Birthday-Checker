@@ -33,18 +33,7 @@ function App() {
     if (date) {
       // a function that will check for palindrome
       // console.log("yayyyyayay", date)
-      setOutputDiv(
-        <img
-          style={{
-            marginTop: "1rem",
-            height: "3rem",
-            width: "3rem",
-            borderRadius: "99px",
-          }}
-          src="https://media0.giphy.com/media/RgzryV9nRCMHPVVXPV/giphy.gif?cid=ecf05e471uj8s7y111nz10pdu4ol6yver40x5atyh76z0gjx&rid=giphy.gif&ct=g"
-          alt=""
-        ></img>
-      );
+      setOutputDiv(<p>Loading.....</p>);
       setTimeout(() => {
         checkPalindrome();
       }, 4000);
