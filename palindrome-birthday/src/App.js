@@ -32,7 +32,7 @@ function App() {
   const [theme, setTheme] = useState(darkTheme);
   const [highLightTheme, setHighLightTheme] = useState(highlightTheme[1]);
 
-  function inputDateHandler(e) {
+   const inputDateHandler = e => {
     e.preventDefault();
     if (date) {
       // a function that will check for palindrome
@@ -46,7 +46,7 @@ function App() {
     }
   }
 
-  function checkPalindrome() {
+  const checkPalindrome () => {
     // before checking for palindrome we have to generate the date
     const dateArray = date.split("-");
     console.log(dateArray, "<<<<<<<<<<");
@@ -65,7 +65,7 @@ function App() {
     setOutputDiv(<p>{newoutput}</p>);
   }
 
-  function checkAllFormatsOfDate(yyyy, mm, dd) {
+  const checkAllFormatsOfDate = (yyyy, mm, dd) => {
     // check all the combinations
     //yyyy-mm-dd format string
     const dateFormat1 = yyyy + mm + dd;
@@ -93,7 +93,7 @@ function App() {
     }
   }
 
-  function isPalindrome(str) {
+  const isPalindrome = str => {
     // check if number is is Palindrome
     var len = str.length;
     var mid = Math.floor(len / 2);
@@ -107,7 +107,7 @@ function App() {
     return true;
   }
 
-  function findNextDate(date, month, year) {
+  const findNextDate (date, month, year) => {
     let ddNo1 = Number(date);
     let mmNo1 = Number(month);
     let yyNo1 = Number(year);
